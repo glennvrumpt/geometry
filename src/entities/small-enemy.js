@@ -1,8 +1,8 @@
 import Entity from "../entities/entity.js";
 import Transform from "../components/transform.js";
 import Shape from "../components/shape.js";
-import Lifespan from "../components/lifespan.js";
 import Collision from "../components/collision.js";
+import Lifespan from "../components/lifespan.js";
 import Vector2 from "../utils/vector2.js";
 
 class SmallEnemy extends Entity {

@@ -6,7 +6,6 @@ import Collision from "./systems/collision.js";
 import Shooting from "./systems/shooting.js";
 import Enemy from "./systems/enemy.js";
 import Lifespan from "./systems/lifespan.js";
-
 import Rendering from "./systems/rendering.js";
 
 const canvas = document.getElementById("canvas");
