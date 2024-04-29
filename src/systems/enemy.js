@@ -4,7 +4,7 @@ import SmallEnemy from "../entities/small-enemy.js";
 import { getRandomRGB, getRandomInt } from "../utils/utilities.js";
 
 class Enemy extends System {
-  constructor(entityManager, canvas, spawnInterval = 1) {
+  constructor(entityManager, canvas, spawnInterval = 1.5) {
     super();
     this.entityManager = entityManager;
     this.canvas = canvas;

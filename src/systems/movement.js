@@ -16,11 +16,7 @@ class Movement extends System {
       if (transform) {
         if (entity.hasTag("Player")) {
           this.updatePlayerMovement(transform, input, deltaTime);
-        } else if (
-          entity.hasTag("Enemy") ||
-          entity.hasTag("SmallEnemy") ||
-          entity.hasTag("Bullet")
-        ) {
+        } else {
           this.updateMovement(transform, deltaTime);
         }
       }

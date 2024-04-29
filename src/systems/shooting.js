@@ -45,7 +45,7 @@ class Shooting extends System {
         bulletVelocity.y,
         6,
         8,
-        "#FFFFFF"
+        "#ffffff"
       );
 
       this.entityManager.addEntity(bullet);

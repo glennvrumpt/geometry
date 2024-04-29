@@ -21,6 +21,17 @@ class Rendering extends System {
       "#141414"
     );
 
+    const player = Object.values(entities).find((entity) =>
+      entity.hasTag("Player")
+    );
+    if (player) {
+      const scoreComponent = player.getComponent("Score");
+      this.context.fillStyle = "#ffffff";
+      this.context.font = "16px monospace";
+      this.context.textAlign = "left";
+      this.context.fillText(`Score: ${scoreComponent.score}`, 10, 20);
+    }
+
     for (const entity of Object.values(entities)) {
       const shape = entity.getComponent("Shape");
       const transform = entity.getComponent("Transform");
