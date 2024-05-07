@@ -39,10 +39,8 @@ class Shooting extends System {
       const bulletVelocity = direction.multiply(this.bulletSpeed);
 
       const bullet = new Bullet(
-        playerPosition.x,
-        playerPosition.y,
-        bulletVelocity.x,
-        bulletVelocity.y,
+        playerPosition,
+        bulletVelocity,
         6,
         8,
         "#ffffff"
