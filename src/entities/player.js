@@ -14,7 +14,7 @@ class Player extends Entity {
     this.addComponent(new Collision(20));
     this.addComponent(new Input());
     this.addComponent(new Score());
-    this.addTag("Player");
+    this.addTag("player");
   }
 }
 

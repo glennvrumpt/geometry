@@ -11,7 +11,7 @@ class Bullet extends Entity {
     this.addComponent(new Shape(radius, sides, color));
     this.addComponent(new Collision(radius));
     this.addComponent(new Lifespan(1));
-    this.addTag("Bullet");
+    this.addTag("bullet");
   }
 }
 

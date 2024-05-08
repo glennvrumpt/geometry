@@ -22,7 +22,7 @@ class Rendering extends System {
     );
 
     const player = Object.values(entities).find((entity) =>
-      entity.hasTag("Player")
+      entity.hasTag("player")
     );
     if (player) {
       const scoreComponent = player.getComponent("Score");
@@ -47,7 +47,7 @@ class Rendering extends System {
 
       this.context.rotate((transform.angle * Math.PI) / 180);
 
-      if (entity.hasTag("Player")) {
+      if (entity.hasTag("player")) {
         this.drawPolygon(0, 0, shape.sides, shape.radius, shape.color, 1, null);
       } else {
         this.drawPolygon(

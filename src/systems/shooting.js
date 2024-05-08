@@ -27,7 +27,7 @@ class Shooting extends System {
   }
 
   shootBullet() {
-    const player = this.entityManager.getEntitiesByTag("Player");
+    const player = this.entityManager.getEntitiesByTag("player");
     const playerEntity = Object.values(player)[0];
 
     if (playerEntity) {

@@ -22,7 +22,7 @@ class Enemy extends System {
     }
 
     for (const entity of Object.values(entities)) {
-      if (entity.hasTag("Enemy") && !entity.active) {
+      if (entity.hasTag("enemy") && !entity.active) {
         this.spawnSmallEnemies(entity);
       }
     }

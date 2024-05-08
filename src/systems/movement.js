@@ -14,7 +14,7 @@ class Movement extends System {
       const input = entity.getComponent("Input");
 
       if (transform) {
-        if (entity.hasTag("Player")) {
+        if (entity.hasTag("player")) {
           this.updatePlayerMovement(transform, input, deltaTime);
         } else {
           this.updateMovement(transform, deltaTime);

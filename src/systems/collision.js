@@ -9,7 +9,7 @@ class Collision extends System {
   }
 
   update(entities) {
-    const playerEntities = this.entityManager.getEntitiesByTag("Player");
+    const playerEntities = this.entityManager.getEntitiesByTag("player");
     const playerEntity = Object.values(playerEntities)[0];
     const playerScore = playerEntity
       ? playerEntity.getComponent("Score")
@@ -22,7 +22,7 @@ class Collision extends System {
       if (transform && collision) {
         this.handleWallCollision(transform, collision);
 
-        if (entity.hasTag("Enemy") || entity.hasTag("SmallEnemy")) {
+        if (entity.hasTag("enemy") || entity.hasTag("small-enemy")) {
           this.checkEntityCollisions(entity, entities, playerScore);
         }
       }
@@ -55,7 +55,7 @@ class Collision extends System {
     const collision = entity.getComponent("Collision");
 
     for (const otherEntity of Object.values(entities)) {
-      if (otherEntity.hasTag("Bullet") || otherEntity.hasTag("Player")) {
+      if (otherEntity.hasTag("bullet") || otherEntity.hasTag("player")) {
         const otherTransform = otherEntity.getComponent("Transform");
 
         if (
@@ -73,7 +73,7 @@ class Collision extends System {
   }
 
   handleEntityCollision(entity, otherEntity, playerScore) {
-    if (otherEntity.hasTag("Bullet")) {
+    if (otherEntity.hasTag("bullet")) {
       entity.active = false;
       otherEntity.active = false;
 
@@ -81,7 +81,7 @@ class Collision extends System {
         const enemyShape = entity.getComponent("Shape");
         playerScore.score += enemyShape.sides;
       }
-    } else if (otherEntity.hasTag("Player")) {
+    } else if (otherEntity.hasTag("player")) {
       entity.active = false;
       this.resetPlayerPosition(otherEntity);
     }

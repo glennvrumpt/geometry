@@ -9,7 +9,7 @@ class Enemy extends Entity {
     this.addComponent(new Transform(position, velocity, 0));
     this.addComponent(new Shape(radius, sides, color));
     this.addComponent(new Collision(radius));
-    this.addTag("Enemy");
+    this.addTag("enemy");
   }
 }
 

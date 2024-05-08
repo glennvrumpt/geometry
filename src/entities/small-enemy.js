@@ -11,7 +11,7 @@ class SmallEnemy extends Entity {
     this.addComponent(new Shape(radius, sides, color));
     this.addComponent(new Lifespan(0.5));
     this.addComponent(new Collision(radius));
-    this.addTag("SmallEnemy");
+    this.addTag("small-enemy");
   }
 }
 
