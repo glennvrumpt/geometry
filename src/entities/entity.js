@@ -1,17 +1,17 @@
 class Entity {
   constructor() {
     this.id = Entity.generateId();
-    this.components = {};
+    this.components = new Map();
     this.tags = new Set();
     this.active = true;
   }
 
   addComponent(component) {
-    this.components[component.constructor.name] = component;
+    this.components.set(component.constructor.name, component);
   }
 
-  getComponent(componentName) {
-    return this.components[componentName];
+  getComponent(componentClass) {
+    return this.components.get(componentClass);
   }
 
   addTag(tag) {

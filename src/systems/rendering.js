@@ -9,9 +9,11 @@ class Rendering extends System {
 
   update(entities, deltaTime) {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
     const tileSize = 20;
     const rows = Math.floor(this.canvas.height / tileSize);
     const cols = Math.floor(this.canvas.width / tileSize);
+
     this.drawChessboardBackground(
       this.context,
       rows,
@@ -21,9 +23,10 @@ class Rendering extends System {
       "#141414"
     );
 
-    const player = Object.values(entities).find((entity) =>
+    const player = Array.from(entities.values()).find((entity) =>
       entity.hasTag("player")
     );
+
     if (player) {
       const scoreComponent = player.getComponent("Score");
       this.context.fillStyle = "#ffffff";
@@ -32,7 +35,7 @@ class Rendering extends System {
       this.context.fillText(`Score: ${scoreComponent.score}`, 10, 20);
     }
 
-    for (const entity of Object.values(entities)) {
+    entities.forEach((entity) => {
       const shape = entity.getComponent("Shape");
       const transform = entity.getComponent("Transform");
 
@@ -42,9 +45,7 @@ class Rendering extends System {
       this.context.translate(x, y);
 
       const rotationSpeed = 170;
-
       transform.angle += rotationSpeed * deltaTime;
-
       this.context.rotate((transform.angle * Math.PI) / 180);
 
       if (entity.hasTag("player")) {
@@ -62,7 +63,7 @@ class Rendering extends System {
       }
 
       this.context.restore();
-    }
+    });
   }
 
   drawChessboardBackground(context, rows, cols, tileSize, color1, color2) {

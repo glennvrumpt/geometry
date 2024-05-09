@@ -6,7 +6,7 @@ class Lifespan extends System {
   }
 
   update(entities, deltaTime) {
-    for (const entity of Object.values(entities)) {
+    entities.forEach((entity) => {
       const lifespan = entity.getComponent("Lifespan");
 
       if (lifespan) {
@@ -16,7 +16,7 @@ class Lifespan extends System {
           entity.active = false;
         }
       }
-    }
+    });
   }
 }
 

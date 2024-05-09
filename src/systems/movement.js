@@ -9,7 +9,7 @@ class Movement extends System {
   }
 
   update(entities, deltaTime) {
-    for (const entity of Object.values(entities)) {
+    entities.forEach((entity) => {
       const transform = entity.getComponent("Transform");
       const input = entity.getComponent("Input");
 
@@ -20,7 +20,7 @@ class Movement extends System {
           this.updateMovement(transform, deltaTime);
         }
       }
-    }
+    });
   }
 
   updatePlayerMovement(transform, input, deltaTime) {

@@ -15,13 +15,13 @@ class Input extends System {
   }
 
   update(entities) {
-    for (const entity of Object.values(entities)) {
+    entities.forEach((entity) => {
       const input = entity.getComponent("Input");
 
       if (input) {
         input.keys = { ...this.keys };
       }
-    }
+    });
   }
 }
 

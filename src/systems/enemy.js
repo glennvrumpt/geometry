@@ -21,11 +21,11 @@ class Enemy extends System {
       this.timeSinceLastSpawn = 0;
     }
 
-    for (const entity of Object.values(entities)) {
+    entities.forEach((entity) => {
       if (entity.hasTag("enemy") && !entity.active) {
         this.spawnSmallEnemies(entity);
       }
-    }
+    });
   }
 
   spawnEnemy() {

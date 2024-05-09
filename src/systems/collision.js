@@ -10,12 +10,12 @@ class Collision extends System {
 
   update(entities) {
     const playerEntities = this.entityManager.getEntitiesByTag("player");
-    const playerEntity = Object.values(playerEntities)[0];
+    const playerEntity = Array.from(playerEntities.values())[0];
     const playerScore = playerEntity
       ? playerEntity.getComponent("Score")
       : null;
 
-    for (const entity of Object.values(entities)) {
+    entities.forEach((entity) => {
       const transform = entity.getComponent("Transform");
       const collision = entity.getComponent("Collision");
 
@@ -26,7 +26,7 @@ class Collision extends System {
           this.checkEntityCollisions(entity, entities, playerScore);
         }
       }
-    }
+    });
   }
 
   handleWallCollision(transform, collision) {
@@ -54,7 +54,7 @@ class Collision extends System {
     const transform = entity.getComponent("Transform");
     const collision = entity.getComponent("Collision");
 
-    for (const otherEntity of Object.values(entities)) {
+    entities.forEach((otherEntity) => {
       if (otherEntity.hasTag("bullet") || otherEntity.hasTag("player")) {
         const otherTransform = otherEntity.getComponent("Transform");
 
@@ -69,7 +69,7 @@ class Collision extends System {
           this.handleEntityCollision(entity, otherEntity, playerScore);
         }
       }
-    }
+    });
   }
 
   handleEntityCollision(entity, otherEntity, playerScore) {
