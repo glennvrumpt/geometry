@@ -26,6 +26,10 @@ class Shooting extends System {
     });
   }
 
+  update(entities, deltaTime) {
+    this.cooldown -= deltaTime;
+  }
+
   shootBullet() {
     const player = this.entityManager.getEntitiesByTag("player");
     const playerEntity = Array.from(player.values())[0];
@@ -48,10 +52,6 @@ class Shooting extends System {
 
       this.entityManager.addEntity(bullet);
     }
-  }
-
-  update(entities, deltaTime) {
-    this.cooldown -= deltaTime;
   }
 }
 
