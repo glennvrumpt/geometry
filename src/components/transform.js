@@ -6,13 +6,13 @@ class Transform extends Component {
     position = new Vector2(0, 0),
     velocity = new Vector2(0, 0),
     scale = new Vector2(1, 1),
-    angle = 0
+    rotation = 0
   ) {
     super();
     this.position = position;
     this.velocity = velocity;
     this.scale = scale;
-    this.angle = angle;
+    this.rotation = rotation;
   }
 }
 

@@ -45,8 +45,8 @@ class Rendering extends System {
       this.context.translate(x, y);
 
       const rotationSpeed = 170;
-      transform.angle += rotationSpeed * deltaTime;
-      this.context.rotate((transform.angle * Math.PI) / 180);
+      transform.rotation += rotationSpeed * deltaTime;
+      this.context.rotate((transform.rotation * Math.PI) / 180);
 
       if (entity.hasTag("player")) {
         this.drawPolygon(0, 0, shape.sides, shape.radius, shape.color, 1, null);
